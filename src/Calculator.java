@@ -137,6 +137,15 @@ public class Calculator {
         };
     }
 
+    public static double safeEvaluateExpression(String expression) {
+        try {
+            return evaluateExpression(expression);
+        } catch (Exception e) {
+            // Если произошло исключение, вернуть NaN
+            return Double.NaN;
+        }
+    }
+
     /**
      * Точка входа в программу.
      *
